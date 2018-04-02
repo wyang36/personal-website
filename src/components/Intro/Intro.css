@@ -1,0 +1,26 @@
+﻿.Intro {
+    width: 100%;
+    margin: auto;
+    overflow: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 1000px) and (min-height: 700px) {
+    .Intro {
+        width: 700px;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 410px) {
+    .Intro {
+        width: 450px;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+    .Intro {
+        width: 350px;
+    }
+}
