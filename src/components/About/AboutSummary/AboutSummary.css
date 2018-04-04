@@ -6,7 +6,7 @@
 .Photo {
     width: 200px;
     height: 200px;
-    margin: 10px;
+    margin: 20px;
     background-image: url(../../../assets/images/my-photo.jpg);
     background-size: cover; 
     background-repeat: no-repeat;
