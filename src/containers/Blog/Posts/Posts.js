@@ -22,7 +22,6 @@ class Posts extends Component {
                     return { ...post, id: index }
                 })
                 this.setState({ posts: updatedPosts });
-                //console.log(response);
             })
             .catch(error => {
                 this.setState({ error: true });

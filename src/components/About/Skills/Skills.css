@@ -1,0 +1,35 @@
+﻿.Container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+
+.SkillsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 70vw;
+}
+
+.HeaderBox {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+    line-height: 70px;
+}
+
+@media (max-width: 500px) {
+    .Container {
+        margin-top: 10px;
+    }
+
+    .SkillsContainer {
+        max-width: 90vw;
+    }
+
+    .HeaderBox {
+        line-height: 20px;
+    }
+}

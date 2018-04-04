@@ -1,0 +1,27 @@
+﻿.Container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Photo {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-image: url(../../../assets/images/my-photo.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ParagraphDiv {
+    margin: 10px;
+    line-height: 20px;
+    max-width:60vw;
+}
+
+@media (max-width: 500px) {
+    .ParagraphDiv {
+        max-width: 90vw;
+    }
+}
+
