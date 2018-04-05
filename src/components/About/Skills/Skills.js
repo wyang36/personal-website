@@ -7,26 +7,26 @@ const skills = () => {
     const skills = [];
 
     let skillcategory = {
-        category: 'Languages',
+        category: 'Programming Languages',
         skills: ['Javascript (ES6)/JSX', 'HTML', 'CSS/Sass', 'C#', 'SQL', 'C++']
     }
     skills.push(skillcategory);
 
     skillcategory = {
         category: 'Frameworks/Libraries',
-        skills: ['ReactJS', 'VueJS', 'NodeJS', 'D3', '.NET']
+        skills: ['ReactJS', 'VueJS', 'NodeJS', 'jQuery', 'D3', '.NET']
     }
     skills.push(skillcategory);
 
     skillcategory = {
-        category: 'Tools',
+        category: 'Develeopement Tools',
         skills: ['Git/Github', 'Subversion', 'MS Visual Studio', 'Adobe Photoshop']
     }
     skills.push(skillcategory);
 
     skillcategory = {
-        category: 'Climbing',
-        skills: ['Belay certified', 'Lead certified']
+        category: 'Other',
+        skills: ['Fluent in Mandarin', 'Belay certified', 'Lead certified']
     }
     skills.push(skillcategory);
 
