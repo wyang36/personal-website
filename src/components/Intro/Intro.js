@@ -3,8 +3,8 @@ import classes from './Intro.css';
 
 const intro = () => (
     <div className={classes.Intro}>
-        <h1 className={classes.FadeIn}>Hi! I'm Kira.</h1>
-        <h2 className={classes.FadeIn}>I'm a full-stack software engineer and amateur rock climber based in Atlanta GA.</h2>
+        <h1 className={classes.FadeIn}>Hi! I'm <span>Kira</span>.</h1>
+        <h2 className={classes.FadeIn}>I'm a full-stack <span>software engineer</span> and amateur rock climber based in Atlanta GA.</h2>
     </div>
 );
 

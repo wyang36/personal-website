@@ -14,11 +14,19 @@
         animation-delay: 0.1s;
     }
 
+        .Intro h1 span {
+            color: #40a4c8;
+        }
+
     .Intro h2 {
         -webkit-animation-delay: .8s;
         -moz-animation-delay: .8s;
         animation-delay: .8s;
     }
+
+        .Intro h2 span {
+            color: #e46a6b;
+        }
 
 .FadeIn {
     opacity: 0;
