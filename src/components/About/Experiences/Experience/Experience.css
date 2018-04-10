@@ -1,0 +1,17 @@
+.ExperienceWrapper {
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.Employer {
+    font-weight: bold;
+    color: #40a4c8;
+    font-size: 15pt;
+    margin: 5px 0;
+}
+
+.RoleAndTime {
+    color: #e46a6b;
+    margin: 5px 0;
+}

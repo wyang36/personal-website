@@ -16,7 +16,7 @@ const aboutSummary = () => (
             </p>
             <p>
                 In 2015 I went to a beginner rock climbing class as my birthday present and have loved it since! I mostly climb indoors and venture outdoors occasionally. 
-                I currently climb around 5.11s and boulder V3s.
+                I currently climb around 5.11s and boulder V4s.
             </p>
         </div>
     </div>
