@@ -1,0 +1,25 @@
+.NewPost {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #6e6e6e;
+    box-shadow: 0 2px 3px #6e6e6e;
+    text-align: center;
+}
+
+.NewPost label {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.NewPost input,
+.NewPost textarea {
+    display: block;
+    width: 80%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    outline: none;
+    font: inherit;
+    margin: auto;
+}

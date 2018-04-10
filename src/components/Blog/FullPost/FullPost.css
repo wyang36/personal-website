@@ -1,0 +1,17 @@
+.FullPost {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #6e6e6e;
+    box-shadow: 0 2px 3px #6e6e6e;
+    text-align: center;
+}
+
+.Title {
+    color: #40a4c8;
+}
+
+.AuthorAndDate {
+    margin: 10px 0;
+    color: #6e6e6e;
+    font-size: 10pt;
+}
