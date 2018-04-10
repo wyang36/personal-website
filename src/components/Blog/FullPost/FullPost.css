@@ -4,6 +4,7 @@
     border: 1px solid #6e6e6e;
     box-shadow: 0 2px 3px #6e6e6e;
     text-align: center;
+    padding: 10px 20px;
 }
 
 .Title {
@@ -14,4 +15,24 @@
     margin: 10px 0;
     color: #6e6e6e;
     font-size: 10pt;
+}
+
+.Photo {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ParagraphDiv {
+    margin: 10px;
+    line-height: 20px;
+    max-width:60vw;
+}
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
 }

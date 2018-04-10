@@ -24,7 +24,12 @@ const fullPost = (props) => {
                     By <span style={{ color: '#e46a6b' }}>{props.loadedPost.author}</span>
                     &nbsp;on <span style={{ color: '#e46a6b' }}>{new Date(props.loadedPost.date).toDateString()}</span>
                 </div>
-                <p>{props.loadedPost.body}</p>
+                <div className={classes.Container}>
+                    <div className={classes.Photo} style={{backgroundImage: `url(${props.loadedPost.image})`}}></div>
+                    <div className={classes.ParagraphDiv}>
+                        <p>{props.loadedPost.body}</p>
+                    </div>
+                </div>
                 {button}
             </div>
 
