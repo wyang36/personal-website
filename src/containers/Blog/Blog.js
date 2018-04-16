@@ -6,6 +6,8 @@ import axios from '../../axios';
 import Posts from '../../components/Blog/Posts/Posts';
 import FullPost from '../../components/Blog/FullPost/FullPost';
 import NewPost from './NewPost/NewPost';
+import Modal from '../../components/UI/Modal/Modal';
+import classes from './Blog.css';
 
 class Blog extends Component {
 
@@ -13,7 +15,9 @@ class Blog extends Component {
         posts: [],
         selectedPost: null,
         error: false,
-        addedPost: null
+        addedPost: null,
+        imageClicked: false,
+        currentImage: null
     }
 
     postSelectedHandler = (id) => {
@@ -27,7 +31,7 @@ class Blog extends Component {
         axios.get('/BlogPosts.json')
             .then(response => {
                 const fetchedPosts = [];
-                for (let key in response.data) {                    
+                for (let key in response.data) {
                     fetchedPosts.push({
                         ...response.data[key],
                         id: key
@@ -44,7 +48,7 @@ class Blog extends Component {
     deletePostHandler = (id) => {
         axios.delete('/BlogPosts/' + id + '.json')
             .then(response => {
-                let updatedposts = [ ...this.state.posts ];
+                let updatedposts = [...this.state.posts];
                 updatedposts = updatedposts.filter(post => post.id !== id);
                 this.setState({ posts: updatedposts, selectedPost: null });
             })
@@ -53,13 +57,21 @@ class Blog extends Component {
     addPostHandler = (post) => {
         axios.post('/BlogPosts.json', post)
             .then(response => {
-                let updatedposts = [ ...this.state.posts ];
+                let updatedposts = [...this.state.posts];
                 updatedposts.push({
                     ...post,
                     id: response.data.name
                 });
                 this.setState({ posts: updatedposts });
             });
+    }
+
+    clickImageHandler = (imagePath) => {
+        this.setState({ imageClicked: true, currentImage: `url(${imagePath})` });
+    }
+
+    removeImageHandler = () => {
+        this.setState({ imageClicked: false });
     }
 
     render() {
@@ -77,12 +89,21 @@ class Blog extends Component {
         if (auth) {
             newpost = <NewPost addPost={this.addPostHandler} />
         }
+
+        const imageDetail = <div
+            style={{ backgroundImage: this.state.currentImage}}
+            className={classes.Photo}
+        />;
         return (
             <div>
                 {posts}
                 <FullPost loadedPost={this.state.selectedPost}
-                    deleteClicked={this.deletePostHandler} />
-                    {newpost}
+                    deleteClicked={this.deletePostHandler}
+                    imageClicked={this.clickImageHandler} />
+                {newpost}
+                <Modal show={this.state.imageClicked} modalClosed={this.removeImageHandler}>
+                    {imageDetail}
+                </Modal>
             </div>
         );
     }

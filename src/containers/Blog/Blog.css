@@ -1,1 +1,7 @@
-﻿
+﻿.Photo {
+    max-width: 50vw;
+    height: 70vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

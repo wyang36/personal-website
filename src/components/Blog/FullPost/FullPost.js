@@ -1,8 +1,7 @@
 import React from 'react';
-
 import classes from './FullPost.css';
-
 import Button from '../../UI/Button/Button';
+import { getImage } from '../../UI/PhotoMapping/PhotoMapping';
 
 const fullPost = (props) => {
     let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>;
@@ -25,7 +24,9 @@ const fullPost = (props) => {
                     &nbsp;on <span style={{ color: '#e46a6b' }}>{new Date(props.loadedPost.date).toDateString()}</span>
                 </div>
                 <div className={classes.Container}>
-                    <div className={classes.Photo} style={{backgroundImage: `url(${props.loadedPost.image})`}}></div>
+                    <div className={classes.Photo}
+                        onClick={() => props.imageClicked(getImage('blog/' + props.loadedPost.image))}
+                        style={{ backgroundImage: `url(${getImage('blog/' + props.loadedPost.image)})` }}></div>
                     <div className={classes.ParagraphDiv}>
                         <p>{props.loadedPost.body}</p>
                     </div>
