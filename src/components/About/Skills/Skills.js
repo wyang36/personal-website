@@ -20,7 +20,7 @@ const skills = () => {
 
     skillcategory = {
         category: 'Develeopement Tools',
-        skills: ['Git/Github', 'Subversion', 'MS Visual Studio', 'Adobe Photoshop']
+        skills: ['Git/Github', 'Subversion', 'MS Visual Studio', 'Visual Studio Code', 'Adobe Photoshop']
     }
     skills.push(skillcategory);
 

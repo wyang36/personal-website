@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './FullPost.css';
 import Button from '../../UI/Button/Button';
-import { getImage } from '../../UI/PhotoMapping/PhotoMapping';
 
 const fullPost = (props) => {
     let post = <p style={{ textAlign: 'center' }}>Please select a Post!</p>;
@@ -15,7 +14,11 @@ const fullPost = (props) => {
         button = <Button btnType="Danger" clicked={() => props.deleteClicked(props.loadedPost.id)}>Delete</Button>;
     }
 
+    let link = null;
+
     if (props.loadedPost) {
+        if (props.loadedPost.link)
+            link = <a href={props.loadedPost.link.url} target="_blank" className={classes.Link}>{props.loadedPost.link.label}</a>;
         post = (
             <div className={classes.FullPost}>
                 <h1 className={classes.Title}>{props.loadedPost.title}</h1>
@@ -25,10 +28,11 @@ const fullPost = (props) => {
                 </div>
                 <div className={classes.Container}>
                     <div className={classes.Photo}
-                        onClick={() => props.imageClicked(getImage('blog/' + props.loadedPost.image))}
-                        style={{ backgroundImage: `url(${getImage('blog/' + props.loadedPost.image)})` }}></div>
+                        onClick={() => props.imageClicked(props.loadedPost.image)}
+                        style={{ backgroundImage: `url(${props.loadedPost.image})` }}></div>
                     <div className={classes.ParagraphDiv}>
                         <p>{props.loadedPost.body}</p>
+                        {link}
                     </div>
                 </div>
                 {button}

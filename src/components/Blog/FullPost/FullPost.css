@@ -37,3 +37,12 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.Link {
+    color: #40a4c8;
+}
+
+.Link:active,
+.Link:hover {
+    font-weight: bold;
+}

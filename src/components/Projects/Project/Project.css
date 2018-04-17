@@ -1,0 +1,91 @@
+.Project {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid #6e6e6e;
+    box-shadow: 0 2px 3px #6e6e6e;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.Title {
+    color: #40a4c8;
+}
+
+.Status {
+    margin: 10px 0;
+    color: #6e6e6e;
+    font-size: 10pt;
+}
+
+.Photo {
+    width: 40%;
+    height: 300px;
+    margin: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.ParagraphDiv {
+    margin: 10px;
+    line-height: 20px;
+    max-width:60vw;
+    width:50%;
+}
+
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Completed {
+    color: #5C9210; 
+}
+
+.InProgress {
+    color: #e46a6b; 
+}
+
+.Links {
+    display: block;
+    margin: 10px 0px;
+}
+
+.Links a {
+    padding: 10px 15px;
+    border: 2px solid #40a4c8;
+    border-radius: 3px;
+    color: #40a4c8;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.ParagraphDiv ul {
+    display: block;
+    list-style: none;
+    margin: 10px 0px;
+}
+
+.ParagraphDiv li {
+    display: inline-block;
+    color: #777;
+    background-color: #333;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 7px 7px 5px;
+    margin-right: 5px;
+    letter-spacing: 0.5px;
+}
+
+
+@media (max-width: 950px) {
+    .ParagraphDiv {
+        width: 95%;
+    }
+
+    .Photo {
+        width: 95%;
+    }
+}
