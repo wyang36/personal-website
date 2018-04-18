@@ -6,7 +6,7 @@ import Input from '../../components/UI/Input/Input';
 
 import axios from '../../axios';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import brands from '@fortawesome/fontawesome-free-brands';
+import * as brands from '@fortawesome/fontawesome-free-brands';
 
 
 class ContactData extends Component {
@@ -142,13 +142,13 @@ class ContactData extends Component {
             <div className={classes.ContactData}>
                 <h3>Contact Me</h3>
                 <a href="https://github.com/wyang36" target="_blank" rel="noopener noreferrer" title="Github">
-                    <FontAwesomeIcon icon={["fab", "github"]} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faGithub} size="lg"/>
                 </a>
                 <a href="https://www.linkedin.com/in/kira-yang-41298220" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                    <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faLinkedin} size="lg"/>
                 </a>
                 <a href="https://www.instagram.com/kirawyang/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                    <FontAwesomeIcon icon={["fab", "instagram"]} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faInstagram} size="lg"/>
                 </a>
                 
                 {form}
