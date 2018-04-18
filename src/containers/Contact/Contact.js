@@ -5,8 +5,8 @@ import classes from './Contact.css';
 import Input from '../../components/UI/Input/Input';
 
 import axios from '../../axios';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import brands from '@fortawesome/fontawesome-free-brands'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
 
 
 class ContactData extends Component {
