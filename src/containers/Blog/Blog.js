@@ -95,7 +95,7 @@ class Blog extends Component {
             className={classes.Photo}
         />;
         return (
-            <div className={classes.Blog}>
+            <div>
                 {posts}
                 <FullPost loadedPost={this.state.selectedPost}
                     deleteClicked={this.deletePostHandler}
