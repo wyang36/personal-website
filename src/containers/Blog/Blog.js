@@ -17,7 +17,9 @@ class Blog extends Component {
         error: false,
         addedPost: null,
         imageClicked: false,
-        currentImage: null
+        currentImage: null,
+        leftIndex: 0,
+        rightIndex: 4
     }
 
     postSelectedHandler = (id) => {
@@ -28,7 +30,7 @@ class Blog extends Component {
     }
 
     componentDidMount() {
-        axios.get('/BlogPosts.json')
+        axios.get('/BlogPosts.json?orderBy="date"')
             .then(response => {
                 const fetchedPosts = [];
                 for (let key in response.data) {
@@ -38,7 +40,7 @@ class Blog extends Component {
                     })
                 }
 
-                this.setState({ posts: fetchedPosts });
+                this.setState({ posts: fetchedPosts.reverse() });
             })
             .catch(error => {
                 this.setState({ error: true });
@@ -58,7 +60,7 @@ class Blog extends Component {
         axios.post('/BlogPosts.json', post)
             .then(response => {
                 let updatedposts = [...this.state.posts];
-                updatedposts.push({
+                updatedposts.unshift({
                     ...post,
                     id: response.data.name
                 });
@@ -74,12 +76,30 @@ class Blog extends Component {
         this.setState({ imageClicked: false });
     }
 
+    clickLeftHandler = () => {
+        this.setState({
+            leftIndex: this.state.leftIndex - 1,
+            rightIndex: this.state.rightIndex - 1
+        });
+    }
+
+    clickRightHandler = () => {
+        this.setState({
+            leftIndex: this.state.leftIndex + 1,
+            rightIndex: this.state.rightIndex + 1
+        });
+    }
+
     render() {
         let posts = <p style={{ textAlign: 'center' }}>Something went wrong</p>;
 
         if (!this.state.error) {
             posts = <Posts
-                posts={this.state.posts}
+                showLeft={this.state.leftIndex > 0}
+                showRight={this.state.rightIndex < (this.state.posts.length - 1)}
+                leftClicked={this.clickLeftHandler}
+                rightClicked={this.clickRightHandler}
+                posts={this.state.posts.slice(this.state.leftIndex, this.state.rightIndex)}
                 postClicked={this.postSelectedHandler} />;
         }
 
@@ -91,7 +111,7 @@ class Blog extends Component {
         }
 
         const imageDetail = <div
-            style={{ backgroundImage: this.state.currentImage}}
+            style={{ backgroundImage: this.state.currentImage }}
             className={classes.Photo}
         />;
         return (
