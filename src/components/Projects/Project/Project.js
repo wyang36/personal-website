@@ -3,12 +3,14 @@ import classes from './Project.css';
 
 const project = (props) => {
     const technologies = [];
-    for (let key in props.technologies) {
-        if (props.technologies[key] === 'high')
-            technologies.unshift(<li key={key}>{key}</li>)
-        else
-            technologies.push(<li key={key}>{key}</li>)
+    const technologySorted = Object.keys(props.technologies).sort(function (a, b) { return props.technologies[a] - props.technologies[b] })
+    for (let key in technologySorted) {
+        technologies.push(<li key={key}>{technologySorted[key]}</li>)
     }
+
+    technologies.sort(function (a, b) {
+        return a.value - b.value;
+    });
 
     const project = (
         <div className={classes.Project}>

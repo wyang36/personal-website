@@ -10,7 +10,7 @@ class Portfolio extends Component {
     }
 
     componentDidMount() {
-        axios.get('/Projects.json')
+        axios.get('/Projects.json?orderBy="sort"&startAt=0')
             .then(response => {
                 const fetchedProjects = [];
                 for (let key in response.data) {
