@@ -7,6 +7,7 @@ import Input from '../../components/UI/Input/Input';
 import axios from '../../axios';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import * as brands from '@fortawesome/fontawesome-free-brands';
+import file from '@fortawesome/fontawesome-free-regular/faFilePdf';
 
 
 class ContactData extends Component {
@@ -16,7 +17,7 @@ class ContactData extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
-                    placeholder: 'John Smith'
+                    placeholder: 'Jon Snow'
                 },
                 label: 'Name',
                 value: '',
@@ -30,7 +31,7 @@ class ContactData extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'email',
-                    placeholder: 'abc@mail.com'
+                    placeholder: 'jonsnow@winterfell.com'
                 },
                 value: '',
                 label: 'Email',
@@ -43,7 +44,7 @@ class ContactData extends Component {
             message: {
                 elementType: 'textarea',
                 elementConfig: {
-                    placeholder: 'I would like to talk to you about a project!'
+                    placeholder: 'Winter is coming...'
                 },
                 value: '',
                 label: 'Message',
@@ -140,7 +141,11 @@ class ContactData extends Component {
 
         return (
             <div className={classes.ContactData}>
-                <h3>Contact Me</h3>
+                <h2>Contact Me</h2>
+                <a href="https://firebasestorage.googleapis.com/v0/b/personal-website-b958a.appspot.com/o/Resume_03_16_2018.pdf?alt=media&token=fa4726a8-ff5a-437d-94b6-92ab1d85d81e"
+                target="_blank" rel="noopener noreferrer" title="Take My Resume!">
+                    <FontAwesomeIcon icon={file} size="lg" />
+                </a>
                 <a href="https://github.com/wyang36" target="_blank" rel="noopener noreferrer" title="Github">
                     <FontAwesomeIcon icon={brands.faGithub} size="lg"/>
                 </a>
