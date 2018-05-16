@@ -1,6 +1,19 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true
+    "BlogPosts": {
+      ".read": true,
+    	".write": true,
+        ".indexOn": ["date"]
+    },
+      "Projects": {
+        ".read": true,
+    		".write": false,
+        ".indexOn": ["sort"]
+      },
+      "Contacts": {
+        ".read": true,
+        ".write": true
+      }
+    
   }
 }
