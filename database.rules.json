@@ -13,6 +13,10 @@
       "Contacts": {
         ".read": true,
         ".write": true
+      },
+      "ResumeLink": {
+        ".read": true,
+        ".write": false
       }
     
   }

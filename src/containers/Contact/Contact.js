@@ -55,7 +55,17 @@ class ContactData extends Component {
                 touched: false
             },
         },
-        formIsValid: false
+        formIsValid: false,
+        resumeLink: null
+    }
+
+    componentDidMount() {
+        axios.get('/ResumeLink.json')
+            .then(response => {
+                this.setState({ resumeLink: response.data });
+            })
+            .catch(error => {
+            })
     }
 
     emailHandler = (event) => {
@@ -139,23 +149,29 @@ class ContactData extends Component {
                 <Button btnType="Success" disabled={!this.state.formIsValid} clicked={this.emailHandler}>Send</Button>
             </form>);
 
+        let resume = null;
+
+        if (this.state.resumeLink) {
+            resume = <a href={this.state.resumeLink}
+                target="_blank" rel="noopener noreferrer" title="Take My Resume!">
+                <FontAwesomeIcon icon={file} size="lg" />
+            </a>;
+        }
+
         return (
             <div className={classes.ContactData}>
                 <h2>Contact Me</h2>
-                <a href="https://firebasestorage.googleapis.com/v0/b/personal-website-b958a.appspot.com/o/Resume_03_16_2018.pdf?alt=media&token=fa4726a8-ff5a-437d-94b6-92ab1d85d81e"
-                target="_blank" rel="noopener noreferrer" title="Take My Resume!">
-                    <FontAwesomeIcon icon={file} size="lg" />
-                </a>
+                {resume}
                 <a href="https://github.com/wyang36" target="_blank" rel="noopener noreferrer" title="Github">
-                    <FontAwesomeIcon icon={brands.faGithub} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faGithub} size="lg" />
                 </a>
                 <a href="https://www.linkedin.com/in/kira-yang-41298220" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                    <FontAwesomeIcon icon={brands.faLinkedin} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faLinkedin} size="lg" />
                 </a>
                 <a href="https://www.instagram.com/kirawyang/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                    <FontAwesomeIcon icon={brands.faInstagram} size="lg"/>
+                    <FontAwesomeIcon icon={brands.faInstagram} size="lg" />
                 </a>
-                
+
                 {form}
             </div>
         )
