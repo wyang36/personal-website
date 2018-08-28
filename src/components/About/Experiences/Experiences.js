@@ -8,9 +8,20 @@ const experiences = () => {
 
     let experience = {
         id: 0,
+        employer: 'Knock.com',
+        role: 'Front End Engineer',
+        time: 'July 2018 - Current',
+        description: `This is my second web developer job and my first to use React/Node and other open source technology. 
+        I'm in the team responsible for the public facing website and the internal application. `
+    }
+
+    experiences.push(experience);
+
+    experience = {
+        id: 1,
         employer: 'ProfitSword LLC',
-        role: 'Software Engineer',
-        time: 'Jan 2014 - Current',
+        role: 'Senior Software Engineer',
+        time: 'Jan 2014 - July 2018',
         description: `This is my first job out of college and I was in a team responsible for rewriting the biggest product
          to a more modern looking single page application using newer technologies. Because of this, I learned about all sorts of technologies used throughout the whole stack
          and experimented with a bunch more. In 2017 I self-taught VueJS and lead the company wide effort to rewrite the entire application for the second time. 
@@ -20,7 +31,7 @@ const experiences = () => {
     experiences.push(experience);
 
     experience = {
-        id: 1,
+        id: 2,
         employer: 'Panasonic Automotive Systems of America',
         role: 'Tools Software Co-op',
         time: 'Jan - May 2013',
@@ -32,7 +43,7 @@ const experiences = () => {
     experiences.push(experience);
 
     experience = {
-        id: 2,
+        id: 3,
         employer: 'Panasonic Automotive Systems of America',
         role: 'Test Development Co-op',
         time: 'May - August 2012, Aug - Dec 2011',
